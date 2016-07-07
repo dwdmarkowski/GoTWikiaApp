@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6FFFEC1E1D2EFCC900FBB0DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC1D1D2EFCC900FBB0DD /* main.m */; };
 		6FFFEC211D2EFCC900FBB0DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC201D2EFCC900FBB0DD /* AppDelegate.m */; };
-		6FFFEC241D2EFCC900FBB0DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC231D2EFCC900FBB0DD /* ViewController.m */; };
+		6FFFEC241D2EFCC900FBB0DD /* GoTArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC231D2EFCC900FBB0DD /* GoTArticlesViewController.m */; };
 		6FFFEC271D2EFCC900FBB0DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFFEC251D2EFCC900FBB0DD /* Main.storyboard */; };
 		6FFFEC291D2EFCC900FBB0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FFFEC281D2EFCC900FBB0DD /* Assets.xcassets */; };
 		6FFFEC2C1D2EFCC900FBB0DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFFEC2A1D2EFCC900FBB0DD /* LaunchScreen.storyboard */; };
@@ -31,8 +31,8 @@
 		6FFFEC1D1D2EFCC900FBB0DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6FFFEC1F1D2EFCC900FBB0DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6FFFEC201D2EFCC900FBB0DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6FFFEC221D2EFCC900FBB0DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6FFFEC231D2EFCC900FBB0DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6FFFEC221D2EFCC900FBB0DD /* GoTArticlesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoTArticlesViewController.h; sourceTree = "<group>"; };
+		6FFFEC231D2EFCC900FBB0DD /* GoTArticlesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoTArticlesViewController.m; sourceTree = "<group>"; };
 		6FFFEC261D2EFCC900FBB0DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6FFFEC281D2EFCC900FBB0DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FFFEC2B1D2EFCC900FBB0DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,10 +81,9 @@
 		6FFFEC1B1D2EFCC900FBB0DD /* GoTWikiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				6FFFEC411D2EFD5D00FBB0DD /* Articles */,
 				6FFFEC1F1D2EFCC900FBB0DD /* AppDelegate.h */,
 				6FFFEC201D2EFCC900FBB0DD /* AppDelegate.m */,
-				6FFFEC221D2EFCC900FBB0DD /* ViewController.h */,
-				6FFFEC231D2EFCC900FBB0DD /* ViewController.m */,
 				6FFFEC251D2EFCC900FBB0DD /* Main.storyboard */,
 				6FFFEC281D2EFCC900FBB0DD /* Assets.xcassets */,
 				6FFFEC2A1D2EFCC900FBB0DD /* LaunchScreen.storyboard */,
@@ -109,6 +108,23 @@
 				6FFFEC381D2EFCC900FBB0DD /* Info.plist */,
 			);
 			path = GoTWikiaAppTests;
+			sourceTree = "<group>";
+		};
+		6FFFEC411D2EFD5D00FBB0DD /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				6FFFEC421D2EFD6100FBB0DD /* ViewControllers */,
+			);
+			name = Articles;
+			sourceTree = "<group>";
+		};
+		6FFFEC421D2EFD6100FBB0DD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6FFFEC221D2EFCC900FBB0DD /* GoTArticlesViewController.h */,
+				6FFFEC231D2EFCC900FBB0DD /* GoTArticlesViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FFFEC241D2EFCC900FBB0DD /* ViewController.m in Sources */,
+				6FFFEC241D2EFCC900FBB0DD /* GoTArticlesViewController.m in Sources */,
 				6FFFEC211D2EFCC900FBB0DD /* AppDelegate.m in Sources */,
 				6FFFEC1E1D2EFCC900FBB0DD /* main.m in Sources */,
 			);

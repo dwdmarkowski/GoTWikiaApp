@@ -6,9 +6,9 @@
 //  Copyright © 2016 Dawid Markowski. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface ViewController : UIViewController
+@interface GoTArticlesViewController : UIViewController
 
 
 @end

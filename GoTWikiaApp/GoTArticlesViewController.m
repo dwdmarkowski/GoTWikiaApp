@@ -6,13 +6,13 @@
 //  Copyright © 2016 Dawid Markowski. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GoTArticlesViewController.h"
 
-@interface ViewController ()
+@interface GoTArticlesViewController ()
 
 @end
 
-@implementation ViewController
+@implementation GoTArticlesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
