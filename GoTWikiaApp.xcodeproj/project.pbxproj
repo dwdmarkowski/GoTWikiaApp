@@ -15,6 +15,7 @@
 		6FFFEC2C1D2EFCC900FBB0DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFFEC2A1D2EFCC900FBB0DD /* LaunchScreen.storyboard */; };
 		6FFFEC371D2EFCC900FBB0DD /* GoTWikiaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC361D2EFCC900FBB0DD /* GoTWikiaAppTests.m */; };
 		6FFFEC461D2EFE0000FBB0DD /* GoTArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC451D2EFE0000FBB0DD /* GoTArticle.m */; };
+		6FFFEC4B1D2EFE8500FBB0DD /* GoTArticlesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC4A1D2EFE8500FBB0DD /* GoTArticlesService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		6FFFEC381D2EFCC900FBB0DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FFFEC441D2EFDE300FBB0DD /* GoTArticle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoTArticle.h; sourceTree = "<group>"; };
 		6FFFEC451D2EFE0000FBB0DD /* GoTArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoTArticle.m; sourceTree = "<group>"; };
+		6FFFEC481D2EFE5C00FBB0DD /* GoTArticlesService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoTArticlesService.h; sourceTree = "<group>"; };
+		6FFFEC4A1D2EFE8500FBB0DD /* GoTArticlesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoTArticlesService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,7 @@
 		6FFFEC411D2EFD5D00FBB0DD /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				6FFFEC471D2EFE4E00FBB0DD /* Services */,
 				6FFFEC431D2EFDD400FBB0DD /* Models */,
 				6FFFEC421D2EFD6100FBB0DD /* ViewControllers */,
 			);
@@ -138,6 +142,15 @@
 				6FFFEC451D2EFE0000FBB0DD /* GoTArticle.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		6FFFEC471D2EFE4E00FBB0DD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6FFFEC481D2EFE5C00FBB0DD /* GoTArticlesService.h */,
+				6FFFEC4A1D2EFE8500FBB0DD /* GoTArticlesService.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +258,7 @@
 				6FFFEC241D2EFCC900FBB0DD /* GoTArticlesViewController.m in Sources */,
 				6FFFEC461D2EFE0000FBB0DD /* GoTArticle.m in Sources */,
 				6FFFEC211D2EFCC900FBB0DD /* AppDelegate.m in Sources */,
+				6FFFEC4B1D2EFE8500FBB0DD /* GoTArticlesService.m in Sources */,
 				6FFFEC1E1D2EFCC900FBB0DD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
