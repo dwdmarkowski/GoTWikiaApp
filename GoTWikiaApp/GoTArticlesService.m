@@ -9,6 +9,7 @@
 @import Foundation;
 
 #import "GoTArticlesService.h"
+#import "GoTArticle.h"
 
 @interface GoTArticlesService ()
 
@@ -28,10 +29,21 @@
 
 - (void)getExpandedArticlesOnSuccess:(void(^)(NSArray<GoTArticle *> *receivedArticles))onSuccess onError:(void(^)(NSError *error))onError {
     [self.articlesAPI requestForArticlesOnSuccess:^(NSData *receivedData) {
-        
+        onSuccess([self receiveArticlesFromData:receivedData]);
     } onError:^(NSError *error) {
         
     }];
+}
+
+- (NSArray<GoTArticle *> *)receiveArticlesFromData:(NSData *)receivedData {
+    NSError *error = nil;
+    NSDictionary<NSString *, id> *json = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingAllowFragments error:&error];
+    NSDictionary<NSString *, id> *articles = json[@"items"];
+    NSMutableArray<GoTArticle *> *mappedArticles = [[NSMutableArray alloc] init];
+    for (NSDictionary<NSString *, id> *article in articles) {
+        [mappedArticles addObject:[[GoTArticle alloc] initWithTitle:article[@"title"] abstract:article[@"abstract"]]];
+    }
+    return mappedArticles;
 }
 
 @end

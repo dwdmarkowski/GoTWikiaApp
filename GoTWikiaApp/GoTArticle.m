@@ -19,4 +19,13 @@
 
 @implementation GoTArticle
 
+- (instancetype)initWithTitle:(NSString *)title abstract:(NSString *)abstract {
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.abstract = abstract;
+    }
+    return self;
+}
+
 @end

@@ -8,4 +8,6 @@
 
 @interface GoTArticle : NSObject
 
+- (instancetype)initWithTitle:(NSString *)title abstract:(NSString *)abstract;
+
 @end
