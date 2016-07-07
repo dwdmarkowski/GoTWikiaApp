@@ -18,12 +18,29 @@
 
 @implementation GoTArticlesAPI
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.session = [self createSession];
+    }
+    return self;
+}
+
 - (NSURL *)baseURL {
     return [NSURL URLWithString:@"http://gameofthrones.wikia.com/api/v1/"];
 }
 
+- (NSURL *)articlesURL {
+    return [[self baseURL] URLByAppendingPathComponent:@"Articles/Top"];
+}
+
 - (void)requestForArticlesOnSuccess:(void(^)(NSData *receivedData))onSuccess onError:(void(^)(NSError *error))onError {
-    
+
+}
+
+- (NSURLSession *)createSession {
+    return [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
 }
 
 @end
