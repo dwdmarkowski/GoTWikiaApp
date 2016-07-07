@@ -12,8 +12,22 @@
 
 @interface GoTArticlesService ()
 
+@property (strong, nonatomic) GoTArticlesAPI *articlesAPI;
+
 @end
 
 @implementation GoTArticlesService
+
+- (instancetype)initWithArticlesAPI:(GoTArticlesAPI *) articlesAPI {
+    self = [super init];
+    if (self) {
+        self.articlesAPI = articlesAPI;
+    }
+    return self;
+}
+
+- (NSArray<GoTArticle *> *)getExpandedArticles {
+    return @[];
+}
 
 @end
