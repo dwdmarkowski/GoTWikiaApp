@@ -13,6 +13,6 @@
 
 - (instancetype)initWithArticlesAPI:(GoTArticlesAPI *) articlesAPI;
 
-- (NSArray<GoTArticle *> *)getExpandedArticles;
+- (void)getExpandedArticlesOnSuccess:(void(^)(NSArray<GoTArticle *> *receivedArticles))onSuccess onError:(void(^)(NSError *error))onError;
 
 @end

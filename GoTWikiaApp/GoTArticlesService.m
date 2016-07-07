@@ -26,13 +26,12 @@
     return self;
 }
 
-- (NSArray<GoTArticle *> *)getExpandedArticles {
+- (void)getExpandedArticlesOnSuccess:(void(^)(NSArray<GoTArticle *> *receivedArticles))onSuccess onError:(void(^)(NSError *error))onError {
     [self.articlesAPI requestForArticlesOnSuccess:^(NSData *receivedData) {
         
     } onError:^(NSError *error) {
         
     }];
-    return @[];
 }
 
 @end

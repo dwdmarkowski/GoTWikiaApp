@@ -12,9 +12,15 @@
 
 @interface GoTArticlesAPI ()
 
+@property (strong, nonatomic) NSURLSession *session;
+
 @end
 
 @implementation GoTArticlesAPI
+
+- (NSURL *)baseURL {
+    return [NSURL URLWithString:@"http://gameofthrones.wikia.com/api/v1/"];
+}
 
 - (void)requestForArticlesOnSuccess:(void(^)(NSData *receivedData))onSuccess onError:(void(^)(NSError *error))onError {
     
