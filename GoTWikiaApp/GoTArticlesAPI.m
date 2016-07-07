@@ -27,16 +27,33 @@
     return self;
 }
 
+- (void)requestForArticlesOnSuccess:(void(^)(NSData *receivedData))onSuccess onError:(void(^)(NSError *error))onError {
+    [self.session dataTaskWithRequest:[self articlesRequest] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+    }];
+}
+
 - (NSURL *)baseURL {
     return [NSURL URLWithString:@"http://gameofthrones.wikia.com/api/v1/"];
 }
 
 - (NSURL *)articlesURL {
-    return [[self baseURL] URLByAppendingPathComponent:@"Articles/Top"];
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:[[self baseURL] URLByAppendingPathComponent:@"Articles/Top"]
+                                                  resolvingAgainstBaseURL:YES];
+    urlComponents.queryItems = [self queryParameters];
+    return urlComponents.URL;
 }
 
-- (void)requestForArticlesOnSuccess:(void(^)(NSData *receivedData))onSuccess onError:(void(^)(NSError *error))onError {
+- (NSArray<NSURLQueryItem *> *)queryParameters {
+    return @[
+        [[NSURLQueryItem alloc] initWithName:@"expand" value:@"1"],
+        [[NSURLQueryItem alloc] initWithName:@"limit" value:@"75"],
+        [[NSURLQueryItem alloc] initWithName:@"category" value:@"Characters"]
+    ];
+}
 
+- (NSURLRequest *)articlesRequest {
+    return [[NSURLRequest alloc] initWithURL:[self articlesURL]];
 }
 
 - (NSURLSession *)createSession {
