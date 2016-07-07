@@ -28,13 +28,18 @@
 }
 
 - (void)requestForArticlesOnSuccess:(void(^)(NSData *receivedData))onSuccess onError:(void(^)(NSError *error))onError {
-    [self.session dataTaskWithRequest:[self articlesRequest] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-    }];
+    [[self.session dataTaskWithRequest:[self articlesRequest] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSUInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
+        if (statusCode < 200 || statusCode > 299 || error) {
+            onError(error ? error : [self unacceptableStatusCodeError:statusCode]);
+        } else if (data != nil) {
+            onSuccess(data);
+        }
+    }] resume];
 }
 
 - (NSURL *)baseURL {
-    return [NSURL URLWithString:@"http://gameofthrones.wikia.com/api/v1/"];
+    return [NSURL URLWithString:@"https://gameofthrones.wikia.com/api/v1/"];
 }
 
 - (NSURL *)articlesURL {
@@ -58,6 +63,12 @@
 
 - (NSURLSession *)createSession {
     return [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+}
+
+- (NSError *)unacceptableStatusCodeError:(NSUInteger)statusCode {
+    return [NSError errorWithDomain:@"GoTArticlesAPIErrorDomain"
+                               code:0
+                           userInfo:@{ NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Unacceptable status code: %lu", statusCode] }];
 }
 
 @end
