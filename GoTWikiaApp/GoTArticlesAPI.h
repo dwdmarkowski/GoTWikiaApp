@@ -8,4 +8,6 @@
 
 @interface GoTArticlesAPI : NSObject
 
+- (void)requestForArticlesOnSuccess:(void(^)(NSData *receivedData))onSuccess onError:(void(^)(NSError *error))onError;
+
 @end

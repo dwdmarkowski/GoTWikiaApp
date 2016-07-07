@@ -27,6 +27,11 @@
 }
 
 - (NSArray<GoTArticle *> *)getExpandedArticles {
+    [self.articlesAPI requestForArticlesOnSuccess:^(NSData *receivedData) {
+        
+    } onError:^(NSError *error) {
+        
+    }];
     return @[];
 }
 
