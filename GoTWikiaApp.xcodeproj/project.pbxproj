@@ -19,6 +19,8 @@
 		6FFFEC4F1D2EFEF000FBB0DD /* GoTArticlesAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC4E1D2EFEF000FBB0DD /* GoTArticlesAPI.m */; };
 		6FFFEC571D30137900FBB0DD /* UIView+GoTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC561D30137900FBB0DD /* UIView+GoTGradient.m */; };
 		6FFFEC5A1D30180100FBB0DD /* UIColor+GoTColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC591D30180100FBB0DD /* UIColor+GoTColorSet.m */; };
+		6FFFEC5D1D30245300FBB0DD /* GoTArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC5C1D30245300FBB0DD /* GoTArticleTableViewCell.m */; };
+		6FFFEC611D3025F800FBB0DD /* GoTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC601D3025F800FBB0DD /* GoTConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		6FFFEC561D30137900FBB0DD /* UIView+GoTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GoTGradient.m"; sourceTree = "<group>"; };
 		6FFFEC581D30180100FBB0DD /* UIColor+GoTColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GoTColorSet.h"; sourceTree = "<group>"; };
 		6FFFEC591D30180100FBB0DD /* UIColor+GoTColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GoTColorSet.m"; sourceTree = "<group>"; };
+		6FFFEC5B1D30242B00FBB0DD /* GoTArticleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoTArticleTableViewCell.h; sourceTree = "<group>"; };
+		6FFFEC5C1D30245300FBB0DD /* GoTArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoTArticleTableViewCell.m; sourceTree = "<group>"; };
+		6FFFEC5F1D30255F00FBB0DD /* GoTConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoTConstants.h; sourceTree = "<group>"; };
+		6FFFEC601D3025F800FBB0DD /* GoTConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoTConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 		6FFFEC1B1D2EFCC900FBB0DD /* GoTWikiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				6FFFEC5E1D30254D00FBB0DD /* Utils */,
 				6FFFEC521D30111E00FBB0DD /* Categories */,
 				6FFFEC411D2EFD5D00FBB0DD /* Articles */,
 				6FFFEC1F1D2EFCC900FBB0DD /* AppDelegate.h */,
@@ -185,6 +192,8 @@
 		6FFFEC511D300E4200FBB0DD /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				6FFFEC5B1D30242B00FBB0DD /* GoTArticleTableViewCell.h */,
+				6FFFEC5C1D30245300FBB0DD /* GoTArticleTableViewCell.m */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -198,6 +207,15 @@
 				6FFFEC591D30180100FBB0DD /* UIColor+GoTColorSet.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		6FFFEC5E1D30254D00FBB0DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6FFFEC5F1D30255F00FBB0DD /* GoTConstants.h */,
+				6FFFEC601D3025F800FBB0DD /* GoTConstants.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +326,9 @@
 				6FFFEC461D2EFE0000FBB0DD /* GoTArticle.m in Sources */,
 				6FFFEC211D2EFCC900FBB0DD /* AppDelegate.m in Sources */,
 				6FFFEC5A1D30180100FBB0DD /* UIColor+GoTColorSet.m in Sources */,
+				6FFFEC5D1D30245300FBB0DD /* GoTArticleTableViewCell.m in Sources */,
 				6FFFEC4B1D2EFE8500FBB0DD /* GoTArticlesService.m in Sources */,
+				6FFFEC611D3025F800FBB0DD /* GoTConstants.m in Sources */,
 				6FFFEC1E1D2EFCC900FBB0DD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
