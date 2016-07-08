@@ -38,23 +38,31 @@
     self.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.abstractLabel];
-    self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    self.abstractLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.abstractLabel.textAlignment = NSTextAlignmentCenter;
-    self.abstractLabel.numberOfLines = 2;
+    [self setupTitleLabelUI];
+    [self setupAbstractLabelUI];
     [self setupTitleLabelConstraints];
     [self setupAbstractLabelConstraints];
 }
 
 - (void)setupTitleLabelConstraints {
+    self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self.titleLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
     [self.titleLabel autoSetDimension:ALDimensionHeight toSize:40];
 }
 
 - (void)setupAbstractLabelConstraints {
+    self.abstractLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self.abstractLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
     [self.abstractLabel autoSetDimension:ALDimensionHeight toSize:60];
+}
+
+- (void)setupTitleLabelUI {
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+}
+
+- (void)setupAbstractLabelUI {
+    self.abstractLabel.textAlignment = NSTextAlignmentCenter;
+    self.abstractLabel.numberOfLines = 2;
 }
 
 @end

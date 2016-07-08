@@ -6,6 +6,7 @@
 //  Copyright © 2016 Dawid Markowski. All rights reserved.
 //
 
+#import <PureLayout/PureLayout.h>
 #import "GoTArticlesViewController.h"
 #import "GoTArticleTableViewCell.h"
 #import "GoTConstants.h"
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) GoTArticlesService *articlesService;
 @property (strong, nonatomic) NSArray<GoTArticle *> *articles;
 @property (strong, nonatomic) UITableView *articlesTableView;
+@property (strong, nonatomic) UILabel *tableHeader;
 
 @end
 
@@ -39,14 +41,21 @@
     [self getData];
 }
 
+#pragma mark UI
+
 - (void)loadView {
-    self.view = self.articlesTableView;
+    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 }
 
 - (void)setupUI {
+    [self.view addGradientWithColors:[UIColor lightBlueColor] secondColor:[UIColor lightYellowColor]];
+    [self.view addSubview:self.articlesTableView];
     self.articlesTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.articlesTableView addGradientWithColors:[UIColor lightBlueColor] secondColor:[UIColor lightYellowColor]];
+    self.articlesTableView.backgroundColor = [UIColor clearColor];
+    self.articlesTableView.contentInset = UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0);
 }
+
+#pragma mark DATA
 
 - (void)getData {
     [self getArticles];
@@ -54,13 +63,14 @@
 
 - (void)getArticles {
     [self.articlesService getExpandedArticlesOnSuccess:^(NSArray<GoTArticle *> *receivedArticles) {
-        NSLog(@"data received");
         self.articles = receivedArticles;
         [self.articlesTableView reloadData];
     } onError:^(NSError *error) {
         
     }];
 }
+
+#pragma mark TABLE
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.articles.count;
