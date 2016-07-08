@@ -10,18 +10,41 @@
 
 @interface GoTArticlesViewController ()
 
+@property (strong, nonatomic) GoTArticlesService *articlesService;
+@property (strong, nonatomic) NSArray<GoTArticle *> *articles;
+
 @end
 
 @implementation GoTArticlesViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (instancetype)initWithArticlesService:(GoTArticlesService *)articlesService {
+    self = [super init];
+    if (self) {
+        self.articlesService = articlesService;
+    }
+    return self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupUI];
+    [self getData];
+}
+
+- (void)setupUI {
+    
+}
+
+- (void)getData {
+    [self getArticles];
+}
+
+- (void)getArticles {
+    [self.articlesService getExpandedArticlesOnSuccess:^(NSArray<GoTArticle *> *receivedArticles) {
+        self.articles = receivedArticles;
+    } onError:^(NSError *error) {
+        
+    }];
 }
 
 @end

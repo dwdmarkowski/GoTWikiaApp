@@ -8,7 +8,11 @@
 
 @import UIKit;
 
+#import "GoTArticlesService.h"
+
 @interface GoTArticlesViewController : UIViewController
+
+- (instancetype)initWithArticlesService:(GoTArticlesService *) articlesService;
 
 @end
 

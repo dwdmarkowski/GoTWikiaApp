@@ -8,6 +8,9 @@
 
 @interface GoTArticle : NSObject
 
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *abstract;
+
 - (instancetype)initWithTitle:(NSString *)title abstract:(NSString *)abstract;
 
 @end
