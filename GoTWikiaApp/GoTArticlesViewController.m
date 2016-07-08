@@ -6,14 +6,13 @@
 //  Copyright © 2016 Dawid Markowski. All rights reserved.
 //
 
-#import <PureLayout/PureLayout.h>
 #import "GoTArticlesViewController.h"
 #import "GoTArticleTableViewCell.h"
 #import "GoTConstants.h"
 #import "UIColor+GoTColorSet.h"
 #import "UIView+GoTGradient.h"
 
-@interface GoTArticlesViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface GoTArticlesViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) GoTArticlesService *articlesService;
 @property (strong, nonatomic) NSArray<GoTArticle *> *articles;
@@ -50,7 +49,8 @@
 - (void)setupUI {
     [self.view addGradientWithColors:[UIColor lightBlueColor] secondColor:[UIColor lightYellowColor]];
     [self.view addSubview:self.articlesTableView];
-    self.articlesTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.articlesTableView.allowsSelection = NO;
+    self.articlesTableView.separatorColor = [UIColor blackColor];
     self.articlesTableView.backgroundColor = [UIColor clearColor];
     self.articlesTableView.contentInset = UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0);
 }
@@ -66,7 +66,7 @@
         self.articles = receivedArticles;
         [self.articlesTableView reloadData];
     } onError:^(NSError *error) {
-        
+        [self showAlert];
     }];
 }
 
@@ -83,11 +83,27 @@
     }
     GoTArticle *article = self.articles[indexPath.row];
     [cell setupLabelWithTitle:article.title abstract:article.abstract];
+    cell.preservesSuperviewLayoutMargins = NO;
+    cell.separatorInset = UIEdgeInsetsZero;
+    cell.layoutMargins = UIEdgeInsetsZero;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
+}
+
+#pragma mark Alert
+
+- (void)showAlert {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Something went wrong" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Retry", nil];
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self getData];
+    }
 }
 
 @end

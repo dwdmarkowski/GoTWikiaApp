@@ -58,11 +58,13 @@
 
 - (void)setupTitleLabelUI {
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:20];
 }
 
 - (void)setupAbstractLabelUI {
     self.abstractLabel.textAlignment = NSTextAlignmentCenter;
     self.abstractLabel.numberOfLines = 2;
+    self.abstractLabel.font = [UIFont systemFontOfSize:14];
 }
 
 @end

@@ -70,7 +70,7 @@
 - (NSError *)unacceptableStatusCodeError:(NSUInteger)statusCode {
     return [NSError errorWithDomain:@"GoTArticlesAPIErrorDomain"
                                code:0
-                           userInfo:@{ NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Unacceptable status code: %lu", statusCode] }];
+                           userInfo:@{ NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Unacceptable status code: %lu", (unsigned long)statusCode] }];
 }
 
 @end

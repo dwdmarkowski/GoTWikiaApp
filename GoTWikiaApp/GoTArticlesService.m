@@ -31,7 +31,7 @@
     [self.articlesAPI requestForArticlesOnSuccess:^(NSData *receivedData) {
         onSuccess([self receiveArticlesFromData:receivedData]);
     } onError:^(NSError *error) {
-        
+        onError(error);
     }];
 }
 
