@@ -72,7 +72,7 @@
     }
     GoTArticle *article = self.articles[indexPath.row];
     [cell setupLabelWithTitle:article.title abstract:article.abstract];
-    return nil;
+    return cell;
 }
 
 @end
