@@ -29,12 +29,14 @@
 
 - (void)requestForArticlesOnSuccess:(void(^)(NSData *receivedData))onSuccess onError:(void(^)(NSError *error))onError {
     [[self.session dataTaskWithRequest:[self articlesRequest] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSUInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
-        if (statusCode < 200 || statusCode > 299 || error) {
-            onError(error ? error : [self unacceptableStatusCodeError:statusCode]);
-        } else if (data != nil) {
-            onSuccess(data);
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSUInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
+            if (statusCode < 200 || statusCode > 299 || error) {
+                onError(error ? error : [self unacceptableStatusCodeError:statusCode]);
+            } else if (data != nil) {
+                onSuccess(data);
+            }
+        });
     }] resume];
 }
 

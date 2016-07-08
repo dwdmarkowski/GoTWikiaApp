@@ -54,6 +54,7 @@
 
 - (void)getArticles {
     [self.articlesService getExpandedArticlesOnSuccess:^(NSArray<GoTArticle *> *receivedArticles) {
+        NSLog(@"data received");
         self.articles = receivedArticles;
         [self.articlesTableView reloadData];
     } onError:^(NSError *error) {
@@ -72,7 +73,11 @@
     }
     GoTArticle *article = self.articles[indexPath.row];
     [cell setupLabelWithTitle:article.title abstract:article.abstract];
-    return nil;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
 
 @end
