@@ -7,11 +7,14 @@
 //
 
 #import "GoTArticlesViewController.h"
+#import "UIColor+GoTColorSet.h"
+#import "UIView+GoTGradient.h"
 
 @interface GoTArticlesViewController ()
 
 @property (strong, nonatomic) GoTArticlesService *articlesService;
 @property (strong, nonatomic) NSArray<GoTArticle *> *articles;
+@property (strong, nonatomic) UITableView *articlesTableView;
 
 @end
 
@@ -21,6 +24,7 @@
     self = [super init];
     if (self) {
         self.articlesService = articlesService;
+        self.articlesTableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     }
     return self;
 }
@@ -31,8 +35,13 @@
     [self getData];
 }
 
+- (void)loadView {
+    self.view = self.articlesTableView;
+}
+
 - (void)setupUI {
-    
+    self.articlesTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.articlesTableView addGradientWithColors:[UIColor lightBlueColor] secondColor:[UIColor lightYellowColor]];
 }
 
 - (void)getData {

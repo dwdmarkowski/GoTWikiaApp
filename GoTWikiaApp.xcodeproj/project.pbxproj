@@ -17,6 +17,8 @@
 		6FFFEC461D2EFE0000FBB0DD /* GoTArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC451D2EFE0000FBB0DD /* GoTArticle.m */; };
 		6FFFEC4B1D2EFE8500FBB0DD /* GoTArticlesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC4A1D2EFE8500FBB0DD /* GoTArticlesService.m */; };
 		6FFFEC4F1D2EFEF000FBB0DD /* GoTArticlesAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC4E1D2EFEF000FBB0DD /* GoTArticlesAPI.m */; };
+		6FFFEC571D30137900FBB0DD /* UIView+GoTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC561D30137900FBB0DD /* UIView+GoTGradient.m */; };
+		6FFFEC5A1D30180100FBB0DD /* UIColor+GoTColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFEC591D30180100FBB0DD /* UIColor+GoTColorSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		6FFFEC4A1D2EFE8500FBB0DD /* GoTArticlesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoTArticlesService.m; sourceTree = "<group>"; };
 		6FFFEC4D1D2EFED900FBB0DD /* GoTArticlesAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoTArticlesAPI.h; sourceTree = "<group>"; };
 		6FFFEC4E1D2EFEF000FBB0DD /* GoTArticlesAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoTArticlesAPI.m; sourceTree = "<group>"; };
+		6FFFEC551D30137900FBB0DD /* UIView+GoTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GoTGradient.h"; sourceTree = "<group>"; };
+		6FFFEC561D30137900FBB0DD /* UIView+GoTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GoTGradient.m"; sourceTree = "<group>"; };
+		6FFFEC581D30180100FBB0DD /* UIColor+GoTColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GoTColorSet.h"; sourceTree = "<group>"; };
+		6FFFEC591D30180100FBB0DD /* UIColor+GoTColorSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GoTColorSet.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		6FFFEC1B1D2EFCC900FBB0DD /* GoTWikiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				6FFFEC521D30111E00FBB0DD /* Categories */,
 				6FFFEC411D2EFD5D00FBB0DD /* Articles */,
 				6FFFEC1F1D2EFCC900FBB0DD /* AppDelegate.h */,
 				6FFFEC201D2EFCC900FBB0DD /* AppDelegate.m */,
@@ -122,6 +129,7 @@
 		6FFFEC411D2EFD5D00FBB0DD /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				6FFFEC501D300E3C00FBB0DD /* UI */,
 				6FFFEC4C1D2EFEC500FBB0DD /* Networking */,
 				6FFFEC471D2EFE4E00FBB0DD /* Services */,
 				6FFFEC431D2EFDD400FBB0DD /* Models */,
@@ -164,6 +172,32 @@
 				6FFFEC4E1D2EFEF000FBB0DD /* GoTArticlesAPI.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		6FFFEC501D300E3C00FBB0DD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6FFFEC511D300E4200FBB0DD /* CustomCells */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		6FFFEC511D300E4200FBB0DD /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		6FFFEC521D30111E00FBB0DD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6FFFEC551D30137900FBB0DD /* UIView+GoTGradient.h */,
+				6FFFEC561D30137900FBB0DD /* UIView+GoTGradient.m */,
+				6FFFEC581D30180100FBB0DD /* UIColor+GoTColorSet.h */,
+				6FFFEC591D30180100FBB0DD /* UIColor+GoTColorSet.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +304,10 @@
 			files = (
 				6FFFEC4F1D2EFEF000FBB0DD /* GoTArticlesAPI.m in Sources */,
 				6FFFEC241D2EFCC900FBB0DD /* GoTArticlesViewController.m in Sources */,
+				6FFFEC571D30137900FBB0DD /* UIView+GoTGradient.m in Sources */,
 				6FFFEC461D2EFE0000FBB0DD /* GoTArticle.m in Sources */,
 				6FFFEC211D2EFCC900FBB0DD /* AppDelegate.m in Sources */,
+				6FFFEC5A1D30180100FBB0DD /* UIColor+GoTColorSet.m in Sources */,
 				6FFFEC4B1D2EFE8500FBB0DD /* GoTArticlesService.m in Sources */,
 				6FFFEC1E1D2EFCC900FBB0DD /* main.m in Sources */,
 			);
